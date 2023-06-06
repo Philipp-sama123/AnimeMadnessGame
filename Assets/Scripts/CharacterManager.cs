@@ -22,13 +22,11 @@ public class CharacterManager : MonoBehaviour, IDamageable
     // Rotate
     // GroundCheck
     // Falling
-    
+
     public bool Grounded = true;
 
     [Tooltip("The character uses its own gravity value. The engine default is -9.81f")]
     public float Gravity = -15.0f;
-
-
 
     protected float TerminalVelocity = 53.0f;
     protected float VerticalVelocity = 0f;
@@ -59,7 +57,13 @@ public class CharacterManager : MonoBehaviour, IDamageable
     protected Animator Animator;
     protected FootIK FootIK;
 
-
+    // TODO: investigate usage of this: 
+    // protected virtual void Update()
+    // {
+    //     // Code that should be executed for all derived classes in their Update method.
+    //     // For example, you can call a custom method called CustomUpdate.
+    //     CustomUpdate();
+    // }
     public virtual void TakeDamage(float amount)
     {
         Animator.CrossFade("Hit_Front", .2f);
@@ -127,6 +131,4 @@ public class CharacterManager : MonoBehaviour, IDamageable
         if (lfAngle > 360f) lfAngle -= 360f;
         return Mathf.Clamp(lfAngle, lfMin, lfMax);
     }
-
-
 }

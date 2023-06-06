@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
 
-    private PlayerManager playerManager;
+    private MainPlayerManager mainPlayerManager;
     [Header("Quick Slot items")]
     public WeaponItem rightWeapon = null;
     public WeaponItem leftWeapon = null;
@@ -25,7 +25,7 @@ public class PlayerInventory : MonoBehaviour
 
     private void Awake()
     {
-        playerManager = GetComponentInParent<PlayerManager>();
+        mainPlayerManager = GetComponentInParent<MainPlayerManager>();
         // playerInventory = GetComponentInParent<PlayerInventory>();
         // playerStats = GetComponentInParent<PlayerStats>();
         // inputHandler = GetComponentInParent<InputHandler>();
