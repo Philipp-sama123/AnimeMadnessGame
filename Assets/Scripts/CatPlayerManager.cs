@@ -5,7 +5,6 @@ using UnityEngine.Serialization;
 public class CatPlayerManager : CharacterManager
 {
     #region Player Movement
-
     [Range(0.0f, 0.3f)] [SerializeField] private float rotationSmoothTime = 0.12f;
     [SerializeField] private float speedChangeRate = 10.0f;
     private const float MoveSpeed = 2.0f; // im m/s
@@ -18,11 +17,9 @@ public class CatPlayerManager : CharacterManager
 
     //Time required to pass before entering the fall state. Useful for walking down stairs
     private const float FallTimeout = 0.15f;
-
     #endregion
 
     #region Camera Variables
-
     [Header("Cinemachine")]
     [Tooltip("The follow target set in the Cinemachine Virtual Camera that the camera will follow")]
     [SerializeField]
@@ -37,20 +34,16 @@ public class CatPlayerManager : CharacterManager
     private readonly float topClamp = 70.0f;
     private readonly float bottomClamp = -30.0f;
     private readonly float cameraAngleOverride = 0.0f;
-
     #endregion
 
     #region Player Runtime Variables
-
     private float speed;
     private float animationBlend;
     private float targetRotation = 0.0f;
     private float rotationVelocity;
-
     #endregion
 
     #region Input Values
-
     private bool lightAttackInput;
     private bool heavyAttackInput;
     private float rollInputTimer;
@@ -59,14 +52,14 @@ public class CatPlayerManager : CharacterManager
     private Vector2 cameraInput;
     private bool jumpInput;
     private bool dodgeAndSprintInput;
-
     #endregion
 
     private ThirdPersonControls playerControls;
     private GameObject mainCamera;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         // get a reference to our main camera
         if (mainCamera == null)
         {
@@ -112,8 +105,10 @@ public class CatPlayerManager : CharacterManager
         AssignAnimationIDs();
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
+
         Move();
         JumpAndGravity();
         HandleAttackInput();
@@ -131,7 +126,7 @@ public class CatPlayerManager : CharacterManager
     {
         if (lightAttackInput)
         {
-            HandleLightAttack(); 
+            HandleLightAttack();
             lightAttackInput = false;
         }
         else if (heavyAttackInput)
@@ -341,11 +336,8 @@ public class CatPlayerManager : CharacterManager
         FallTimeoutDelta = FallTimeout;
     }
 
-    private void OnAnimatorMove()
+    protected override void OnAnimatorMove()
     {
-        if (isUsingRootMotion)
-        {
-            CharacterController.Move(Animator.deltaPosition);
-        }
+        base.OnAnimatorMove();
     }
 }

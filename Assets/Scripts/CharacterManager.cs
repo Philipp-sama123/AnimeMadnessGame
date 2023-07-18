@@ -56,7 +56,20 @@ public class CharacterManager : MonoBehaviour, IDamageable
 
     protected Animator Animator;
     protected FootIK FootIK;
+    protected virtual void Awake()
+    {
+        Animator = GetComponent<Animator>();
+        FootIK = GetComponent<FootIK>();
+        // get a reference to our main camera
 
+        CharacterController = GetComponent<CharacterController>();
+        AssignAnimationIDs(); 
+    }
+    protected virtual void Update()
+    {
+        GroundedCheck();
+        isUsingRootMotion = Animator.GetBool(AnimIDIsUsingRootMotion);
+    }
     // TODO: investigate usage of this: 
     // protected virtual void Update()
     // {
@@ -70,7 +83,7 @@ public class CharacterManager : MonoBehaviour, IDamageable
         Debug.Log("Base Take Damage called: Damage Amount: " + amount);
     }
 
-    protected void GroundedCheck()
+    protected virtual void GroundedCheck()
     {
         if (FootIK && FootIK.enabled)
         {
@@ -115,7 +128,7 @@ public class CharacterManager : MonoBehaviour, IDamageable
         }
     }
 
-    protected void AssignAnimationIDs()
+    protected virtual void AssignAnimationIDs()
     {
         AnimIDSpeed = Animator.StringToHash("Speed");
         animIDGrounded = Animator.StringToHash("Grounded");
@@ -130,5 +143,12 @@ public class CharacterManager : MonoBehaviour, IDamageable
         if (lfAngle < -360f) lfAngle += 360f;
         if (lfAngle > 360f) lfAngle -= 360f;
         return Mathf.Clamp(lfAngle, lfMin, lfMax);
+    }
+    protected virtual void OnAnimatorMove()
+    {
+        if (isUsingRootMotion)
+        {
+            CharacterController.Move(Animator.deltaPosition);
+        }
     }
 }

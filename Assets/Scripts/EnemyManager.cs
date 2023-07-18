@@ -6,8 +6,8 @@ public class EnemyManager : CharacterManager
     private const float DetectionRadius = 10f;
     private const float MovementSpeed = 3.5f;
     private const float RotationSpeed = 3.5f;
-    private const float StoppingDistance = 2f;
-    private const float AttackDistance = 2f;
+    private const float StoppingDistance = 1f;
+    private const float AttackDistance = 1f;
     private const float AnimationSpeedMultiplier = 2f;
     private const float Acceleration = 5f;
     private const float Deceleration = 5f;
@@ -17,23 +17,20 @@ public class EnemyManager : CharacterManager
     private float currentSpeed;
     private float targetSpeed;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        CharacterController = GetComponent<CharacterController>();
-        Animator = GetComponent<Animator>();
-        FootIK = GetComponent<FootIK>();
         AssignAnimationIDs();
     }
 
-    private void Update()
+    protected override void Update()
     {
-        GroundedCheck();
-
-        Move();
+        base.Update();
+        MoveEnemy();
     }
 
-    private void Move()
+    private void MoveEnemy()
     {
         Animator.SetFloat(AnimIDMotionSpeed, 1);
         Vector3 movement = Vector3.zero;
@@ -120,11 +117,8 @@ public class EnemyManager : CharacterManager
         CharacterController.Move(fallingSpeed);
     }
 
-    private void OnAnimatorMove()
+    protected override void OnAnimatorMove()
     {
-        if (isUsingRootMotion)
-        {
-            CharacterController.Move(Animator.deltaPosition);
-        }
+        base.OnAnimatorMove();
     }
 }
