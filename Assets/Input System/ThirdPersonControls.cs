@@ -37,28 +37,10 @@ public partial class @ThirdPersonControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""moveInput"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""5b13cf5e-9b87-4e8f-9806-30f3029cd8c7"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Camera"",
                     ""type"": ""PassThrough"",
                     ""id"": ""dc79de5e-8fcc-43a5-8f6c-009ad2786777"",
                     ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""jumpInput"",
-                    ""type"": ""Button"",
-                    ""id"": ""fa7c6afb-067a-41bd-8129-e3539a1bb6cd"",
-                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -240,138 +222,6 @@ public partial class @ThirdPersonControls: IInputActionCollection2, IDisposable
                     ""action"": ""Camera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""WASD"",
-                    ""id"": ""925247b1-ef7c-4c2c-b7e2-f87434fea8b5"",
-                    ""path"": ""2DVector(mode=2)"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""moveInput"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""c0ba4eb3-14e1-4935-899d-ca303b13c28d"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""moveInput"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""27f11a7c-793d-41f2-acdf-c22d9d221a25"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""moveInput"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""1f53498a-0b33-46e5-8342-a16624077dd0"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""moveInput"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""46963591-273d-4a71-8f44-080d491a0379"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""moveInput"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Left Stick"",
-                    ""id"": ""de75af57-9829-4454-a892-a32113536179"",
-                    ""path"": ""2DVector(mode=2)"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""moveInput"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""b96e5b9c-9e8b-4c4d-aeca-5d0699745fd9"",
-                    ""path"": ""<Gamepad>/leftStick/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""moveInput"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""adae4ad5-f06b-4ffd-96aa-d51c60f63a49"",
-                    ""path"": ""<Gamepad>/leftStick/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""moveInput"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""e3c4ee4a-f8ac-4985-9f87-da3773493fdd"",
-                    ""path"": ""<Gamepad>/leftStick/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""moveInput"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""f41e01e3-ce98-409c-9615-f72043e48074"",
-                    ""path"": ""<Gamepad>/leftStick/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""moveInput"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""09a760fd-15d2-4a4b-b099-e71826576433"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""jumpInput"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""a3567800-a5c3-4cce-936c-df2d77f6e78c"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""jumpInput"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -385,7 +235,7 @@ public partial class @ThirdPersonControls: IInputActionCollection2, IDisposable
                     ""id"": ""dd64b31a-17e3-496f-b60d-e76bc67bb838"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold"",
                     ""initialStateCheck"": false
                 },
                 {
@@ -403,7 +253,7 @@ public partial class @ThirdPersonControls: IInputActionCollection2, IDisposable
                     ""id"": ""b892f3cb-9b6a-4550-a9ac-34527d822a6d"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Tap"",
                     ""initialStateCheck"": false
                 },
                 {
@@ -500,7 +350,7 @@ public partial class @ThirdPersonControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""70157ca2-f19d-4022-92ff-a9ade92795ea"",
-                    ""path"": ""<Keyboard>/x"",
+                    ""path"": ""<Keyboard>/shift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -511,7 +361,7 @@ public partial class @ThirdPersonControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""50937746-1cb9-45ae-ba6a-7360622e83e4"",
-                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -637,9 +487,7 @@ public partial class @ThirdPersonControls: IInputActionCollection2, IDisposable
         // Player Movement
         m_PlayerMovement = asset.FindActionMap("Player Movement", throwIfNotFound: true);
         m_PlayerMovement_Movement = m_PlayerMovement.FindAction("Movement", throwIfNotFound: true);
-        m_PlayerMovement_moveInput = m_PlayerMovement.FindAction("moveInput", throwIfNotFound: true);
         m_PlayerMovement_Camera = m_PlayerMovement.FindAction("Camera", throwIfNotFound: true);
-        m_PlayerMovement_jumpInput = m_PlayerMovement.FindAction("jumpInput", throwIfNotFound: true);
         // Player Actions
         m_PlayerActions = asset.FindActionMap("Player Actions", throwIfNotFound: true);
         m_PlayerActions_Sprint = m_PlayerActions.FindAction("Sprint", throwIfNotFound: true);
@@ -712,17 +560,13 @@ public partial class @ThirdPersonControls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_PlayerMovement;
     private List<IPlayerMovementActions> m_PlayerMovementActionsCallbackInterfaces = new List<IPlayerMovementActions>();
     private readonly InputAction m_PlayerMovement_Movement;
-    private readonly InputAction m_PlayerMovement_moveInput;
     private readonly InputAction m_PlayerMovement_Camera;
-    private readonly InputAction m_PlayerMovement_jumpInput;
     public struct PlayerMovementActions
     {
         private @ThirdPersonControls m_Wrapper;
         public PlayerMovementActions(@ThirdPersonControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_PlayerMovement_Movement;
-        public InputAction @moveInput => m_Wrapper.m_PlayerMovement_moveInput;
         public InputAction @Camera => m_Wrapper.m_PlayerMovement_Camera;
-        public InputAction @jumpInput => m_Wrapper.m_PlayerMovement_jumpInput;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMovement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -735,15 +579,9 @@ public partial class @ThirdPersonControls: IInputActionCollection2, IDisposable
             @Movement.started += instance.OnMovement;
             @Movement.performed += instance.OnMovement;
             @Movement.canceled += instance.OnMovement;
-            @moveInput.started += instance.OnMoveInput;
-            @moveInput.performed += instance.OnMoveInput;
-            @moveInput.canceled += instance.OnMoveInput;
             @Camera.started += instance.OnCamera;
             @Camera.performed += instance.OnCamera;
             @Camera.canceled += instance.OnCamera;
-            @jumpInput.started += instance.OnJumpInput;
-            @jumpInput.performed += instance.OnJumpInput;
-            @jumpInput.canceled += instance.OnJumpInput;
         }
 
         private void UnregisterCallbacks(IPlayerMovementActions instance)
@@ -751,15 +589,9 @@ public partial class @ThirdPersonControls: IInputActionCollection2, IDisposable
             @Movement.started -= instance.OnMovement;
             @Movement.performed -= instance.OnMovement;
             @Movement.canceled -= instance.OnMovement;
-            @moveInput.started -= instance.OnMoveInput;
-            @moveInput.performed -= instance.OnMoveInput;
-            @moveInput.canceled -= instance.OnMoveInput;
             @Camera.started -= instance.OnCamera;
             @Camera.performed -= instance.OnCamera;
             @Camera.canceled -= instance.OnCamera;
-            @jumpInput.started -= instance.OnJumpInput;
-            @jumpInput.performed -= instance.OnJumpInput;
-            @jumpInput.canceled -= instance.OnJumpInput;
         }
 
         public void RemoveCallbacks(IPlayerMovementActions instance)
@@ -882,9 +714,7 @@ public partial class @ThirdPersonControls: IInputActionCollection2, IDisposable
     public interface IPlayerMovementActions
     {
         void OnMovement(InputAction.CallbackContext context);
-        void OnMoveInput(InputAction.CallbackContext context);
         void OnCamera(InputAction.CallbackContext context);
-        void OnJumpInput(InputAction.CallbackContext context);
     }
     public interface IPlayerActionsActions
     {

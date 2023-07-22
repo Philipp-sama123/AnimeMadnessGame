@@ -1,3 +1,4 @@
+using Character;
 using HoaxGames;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -69,7 +70,7 @@ public class CatPlayerManager : CharacterManager
         Animator = GetComponent<Animator>();
         FootIK = GetComponent<FootIK>();
 
-        CharacterController = GetComponent<CharacterController>();
+        characterController = GetComponent<CharacterController>();
     }
 
     private void OnEnable()
@@ -102,7 +103,6 @@ public class CatPlayerManager : CharacterManager
     {
         cinemachineTargetYaw = cinemachineCameraTarget.transform.rotation.eulerAngles.y;
         ResetTimeOuts();
-        AssignAnimationIDs();
     }
 
     protected override void Update()
@@ -206,7 +206,7 @@ public class CatPlayerManager : CharacterManager
         if (moveInput == Vector2.zero) targetSpeed = 0.0f;
 
         // a reference to the players current horizontal velocity
-        var velocity = CharacterController.velocity;
+        var velocity = characterController.velocity;
         float currentHorizontalSpeed = new Vector3(velocity.x, 0.0f, velocity.z).magnitude;
 
         float speedOffset = 0.1f;
@@ -252,7 +252,7 @@ public class CatPlayerManager : CharacterManager
 
         // move the player
         if (!isUsingRootMotion)
-            CharacterController.Move(targetDirection.normalized * (speed * Time.deltaTime) +
+            characterController.Move(targetDirection.normalized * (speed * Time.deltaTime) +
                                      new Vector3(0.0f, VerticalVelocity, 0.0f) * Time.deltaTime);
 
         // update animator if using character

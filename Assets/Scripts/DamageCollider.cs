@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Character;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 [RequireComponent(typeof(Collider))]
 public class DamageCollider : MonoBehaviour
@@ -46,15 +48,15 @@ public class DamageCollider : MonoBehaviour
                 damageable.TakeDamage(damageAmount);
 
                 Debug.LogWarning("Hit " + other.gameObject.name);
-                Hit(other.transform);
+                Debug.LogWarning("Hit " + other.transform.localPosition.ToString());
+                Hit(other.transform.localPosition);
             }
         }
     }
 
-    private void Hit(Transform hitTransform)
+    private void Hit(Vector3 hitPosition)
     {
-        hitParticleSystem.transform.position = hitTransform.position;
-        hitParticleSystem.transform.parent = null;
+        hitParticleSystem.transform.position = hitPosition;
         hitParticleSystem.Play();
     }
 
