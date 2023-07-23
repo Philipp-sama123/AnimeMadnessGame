@@ -26,7 +26,7 @@ namespace Character.Player
         public bool dodgeInput = false;
         public bool sprintInput = false;
         public bool jumpInput = false;
-    
+
         private void Awake()
         {
             if (Instance == null)
@@ -42,7 +42,7 @@ namespace Character.Player
         private void Start()
         {
             DontDestroyOnLoad(this);
-
+            playerManager = FindObjectOfType<PlayerManager>();
             SceneManager.activeSceneChanged += OnSceneChange;
             // Instance.enabled = false;
         }
